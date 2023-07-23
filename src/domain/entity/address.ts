@@ -1,13 +1,13 @@
 export default class Address {
   _street: string = ''
   _number: number = 0
-  _zip: string = ''
+  _zipCode: string = ''
   _city: string = ''
 
-  constructor(street: string, number: number, zip: string, city: string) {
+  constructor(street: string, number: number, zipCode: string, city: string) {
     this._street = street
     this._number = number
-    this._zip = zip
+    this._zipCode = zipCode
     this._city = city
     this.validate()
   }
@@ -20,8 +20,8 @@ export default class Address {
     return this._number
   }
 
-  get zip(): string {
-    return this._zip
+  get zipCode(): string {
+    return this._zipCode
   }
 
   get city(): string {
@@ -35,8 +35,8 @@ export default class Address {
     if (!this._number) {
       throw new Error('Number is required')
     }
-    if (!this._zip) {
-      throw new Error('Zip is required')
+    if (!this._zipCode) {
+      throw new Error('zipCode is required')
     }
     if (!this._city) {
       throw new Error('City is required')
@@ -44,6 +44,6 @@ export default class Address {
   }
 
   toString() {
-    return `${this._street}, ${this._number}, ${this._zip} ${this._city}`
+    return `${this._street}, ${this._number}, ${this._zipCode} ${this._city}`
   }
 }

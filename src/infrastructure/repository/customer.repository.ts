@@ -10,7 +10,7 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
       name: entity.name,
       street: entity.address.street,
       number: entity.address.number,
-      zipCode: entity.address.zip,
+      zipCode: entity.address.zipCode,
       city: entity.address.city,
       active: entity.isActive(),
       rewardPoints: entity.rewardPoints
@@ -23,7 +23,7 @@ export default class CustomerRepository implements CustomerRepositoryInterface {
         name: entity.name,
         street: entity.address.street,
         number: entity.address.number,
-        zipCode: entity.address.zip,
+        zipCode: entity.address.zipCode,
         city: entity.address.city,
         active: entity.isActive(),
         rewardPoints: entity.rewardPoints
