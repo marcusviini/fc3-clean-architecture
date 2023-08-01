@@ -66,4 +66,14 @@ export default class Customer {
   addRewardPoints(points: number) {
     this._rewardPoints += points
   }
+
+  setAddress(address: Address) {
+		this._address = address;
+		this._address.validate();
+	}
+
+  getAddress(): Address | null {
+		return this._address ?? null;
+	}
+
 }
