@@ -16,6 +16,7 @@ export default class Customer extends Entity {
       throw new NotificationError(this.notification.getErrors());
     }
   }
+
   get address(): Address {
     return this._address
   }
