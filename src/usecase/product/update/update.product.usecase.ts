@@ -15,6 +15,10 @@ export default class UpdateProductUseCase {
       throw new Error('Product not found')
     }
 
+    if (!input.name) {
+      throw new Error('Name is required')
+    }
+
     product.changeName(input.name)
     product.changePrice(input.price)
 

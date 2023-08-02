@@ -3,7 +3,6 @@ import Address from './address'
 import NotificationError from '../@shared/notification/notification.error'
 
 export default class Customer extends Entity {
-  private _name: string = ''
   private _address!: Address
   private _active: boolean = false
   private _rewardPoints: number = 0
@@ -17,11 +16,6 @@ export default class Customer extends Entity {
       throw new NotificationError(this.notification.getErrors());
     }
   }
-
-  get name(): string {
-    return this._name
-  }
-
   get address(): Address {
     return this._address
   }
