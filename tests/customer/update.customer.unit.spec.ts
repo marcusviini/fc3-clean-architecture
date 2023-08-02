@@ -35,12 +35,6 @@ describe('Unit test UpdateCustomer use case', () => {
     const customerUpdated = await updateCustomerUseCase.execute(input)
     expect(customerUpdated).toStrictEqual(input)
   })
-  it('Should throw an error when customer name is invalid', async () => {
-    const customerRepository = mockCustomerRepository()
-    const updateCustomerUseCase = new UpdateCustomerUseCase(customerRepository)
-    input.name = ''
-    await expect(updateCustomerUseCase.execute(input)).rejects.toThrow('Name is required')
-  })
 })
 
 

@@ -11,10 +11,6 @@ export default class UpdateCustomerUseCase {
 
   async execute(input: InputUpdateCustomerDto): Promise<OutputUpdateCustomerDto> {
     const customer = await this.customerRepository.find(input.id)
-
-    if (!customer) {
-      throw new Error('Customer not found')
-    }
     
     customer.changeName(input.name)
     customer.changeAddress(new Address(input.address.street, input.address.number, input.address.zipCode, input.address.city))

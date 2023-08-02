@@ -36,12 +36,13 @@ describe('Unit test for notification', () => {
     expect(notification.hasErrors()).toBe(true)
   })
   it('Should get all errors props', () => {
-    const notification = new Notification()
+    const notification = new Notification();
     const error = {
       message: 'error message',
-      context: 'customer'
-    }
-    notification.addError(error)
-    expect(notification.getErrors()).toBe([error])
+      context: 'customer',
+    };
+    notification.addError(error);
+
+    expect(notification.getErrors()).toEqual([error]);
   })
 })
